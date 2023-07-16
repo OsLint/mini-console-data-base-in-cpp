@@ -38,7 +38,9 @@ int main() {
         cout << "2. Show persons." << endl;
         cout << "3. Save Data base to file." << endl;
         cout << "4. Load Data base from file." << endl;
-        cout << "5. Delete person from data base." << endl;
+        cout << "5. Search person from data base." << endl;
+        cout << "6. Delete person from data base." << endl;
+        cout << "7. Exit Program." << endl;
 
         cin >> choice;
         cin.ignore();
@@ -62,6 +64,8 @@ int main() {
             case '6':
                  deletePerson();
                 break;
+            case '7':
+                return 0;
 
         }
         requireEnter();
