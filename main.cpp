@@ -156,7 +156,7 @@ void loadFile(){
 
         for (int i = 0; i < personCounter; ++i) {
             Person newPerson;
-            newPerson.id = personCounter;
+            newPerson.id = i;
             file >> newPerson.name;
             file >> newPerson.surname;
             file >> newPerson.age;
