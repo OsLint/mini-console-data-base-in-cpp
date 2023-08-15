@@ -54,7 +54,6 @@ The person database can be saved to and loaded from a file named dataBase.txt. T
 Each person's information is stored sequentially, with each field on a separate line. The number of persons in the database is stored at the beginning of the file.
 
 ## Note :information_source:
-The program uses the ```system("clear")``` command to clear the console screen. This command is specific to Unix-like systems. If you are running the program on Windows, you need to change it to ```system("cls")``` in the code.
 When deleting a person, the program saves the updated database to the file automatically.
 The program expects the database file to be present in the same directory as the program executable. If the file is not found, an error message will be displayed.
 Feel free to modify and extend this program according to your needs. :hammer_and_wrench:

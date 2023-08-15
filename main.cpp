@@ -69,7 +69,11 @@ int main() {
 
         }
         requireEnter();
-        system("clear"); // change to "cls" on windows
+#ifdef _WIN32
+        system("cls");
+#else
+        system("clear");
+#endif
     } while (choice != 27);
 
 
