@@ -11,7 +11,7 @@ To run this program, you need to have a C++ compiler installed on your system. T
 1. Compile the program using a C++ compiler. For example, you can use the following command with `g++`: :hammer_and_wrench:
 
 ```bash
-g++ -o persondb persondb.cpp
+g++ -o persondb main.cpp
 ```
 2. Run the compiled program: :arrow_forward:
 ```bash
