@@ -158,7 +158,6 @@ void loadFile(){
             file >> newPerson.age;
             file >> newPerson.phoneNumber;
             persons.push_back(newPerson);
-            personCounter++;
         }
 
 
