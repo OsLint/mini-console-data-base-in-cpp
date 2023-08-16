@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
@@ -90,7 +91,9 @@ void addPerson() {
 
     Person newPerson;
 
-    newPerson.id = personCounter;
+    newPerson.id = 0;
+    if (personCounter)
+        newPerson.id = std::max_element(persons.begin(), persons.end(), [](const Person& p1, const Person& p2){return p1.id < p2.id;})->id + 1;
 
     cout << "Enter Name: ";
     cin >> newPerson.name;
