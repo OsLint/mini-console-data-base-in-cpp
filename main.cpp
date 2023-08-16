@@ -1,7 +1,9 @@
 #include <algorithm>
+#include <exception>
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <stdexcept>
 #include <vector>
 #include <string>
 
@@ -94,15 +96,23 @@ void addPerson() {
     newPerson.id = 0;
     if (personCounter)
         newPerson.id = std::max_element(persons.begin(), persons.end(), [](const Person& p1, const Person& p2){return p1.id < p2.id;})->id + 1;
-
+    
+    string input_line;
     cout << "Enter Name: ";
-    cin >> newPerson.name;
+    std::getline(std::cin, newPerson.name); // in case for spaces
     cout << "Enter surname: ";
-    cin >> newPerson.surname;
+    std::getline(std::cin, newPerson.surname); // in case for spaces 
     cout << "Enter Age: ";
-    cin >> newPerson.age;
+    std::getline(std::cin, input_line); // in case for non numerics
+    try {
+        newPerson.age = stoi(input_line);
+        if (newPerson.age > 200) throw std::exception();
+    } catch (const exception& e) {
+        cout << "Not a valid age" << endl;
+        return;
+    } 
     cout << "Enter phone number: ";
-    cin >> newPerson.phoneNumber;
+    std::getline(std::cin, newPerson.phoneNumber); // in case for spaces
 
     cout << "Added new person." << endl;
 
